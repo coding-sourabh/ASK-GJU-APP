@@ -31,12 +31,6 @@ function QHeader() {
     setIsModalOpen(false);
 
     if (questionName) {
-      // db.collection("questions").add({
-      //   user: user,
-      //   question: input,
-      //   imageUrl: inputUrl,
-      //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      // });
       axios
         .post("http://localhost:8800/api/question/addQuestion", {
           user: user,

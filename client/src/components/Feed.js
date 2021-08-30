@@ -2,20 +2,16 @@ import React, { useEffect, useState, useContext } from "react";
 import QuorBox from "./QuorBox";
 import "./Feed.css";
 import Post from "./Post";
-import { AuthContext } from "./context/store";
 import axios from "axios";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
-  const context = useContext(AuthContext);
-  const user = context.user;
   const [qID, setQID] = useState("");
 
   useEffect(() => {
     axios
       .post("http://localhost:8800/api/question/fetchQuestions")
       .then(function (response) {
-        // console.log("hlo " , response.data);
         let data = response.data.allQuestions;
         setPosts(data);
       })
@@ -23,8 +19,6 @@ function Feed() {
         console.log(error);
       });
   }, [posts]);
-
-  // console.log(posts[0]);
 
   return (
     <div className="feed">

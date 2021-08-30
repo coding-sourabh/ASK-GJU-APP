@@ -37,10 +37,6 @@ function Post({
           questionID: questionID,
         })
         .then(function (response) {
-          // console.log(
-          //   "successfully recieved all answer with ID ",
-          //   response.data
-          // );
           setGetAnswers(response.data.allAnswer);
         })
         .catch(function (error) {
@@ -211,58 +207,3 @@ function Post({
 }
 
 export default Post;
-
-{
-  /* <p key={id} style={{ position: "relative", paddingBottom: "5px" }}>
-{Id === answers.questionId ? (
-  <span>
-    {answers.answer}
-    <br />
-    <span
-      style={{
-        position: "absolute",
-        color: "gray",
-        fontSize: "small",
-        display: "flex",
-        right: "0px",
-      }}
-    >
-      <span style={{ color: "#b92b27" }}>
-        {answers.user.displayName
-          ? answers.user.displayName
-          : answers.user.email}{" "}
-        on{" "}
-        {new Date(answers.timestamp?.toDate()).toLocaleString()}
-      </span>
-    </span>
-  </span>
-) : (
-  ""
-)}
-</p> */
-}
-
-{
-  /* <span>
-{answers.answer}
-
-<span
-  style={{
-    position: "absolute",
-    color: "gray",
-    fontSize: "small",
-    display: "flex",
-    right: "0px",
-  }}
->
-  <span style={{ color: "grey" }}>
-    {answers.user.username
-      ? answers.user.username
-      : answers.user.email}{" "}
-    on {answers.answerTime}
-  </span>
-</span>
-<br />
-<br />
-</span> */
-}
