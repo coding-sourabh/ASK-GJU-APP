@@ -150,19 +150,20 @@
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color: blue;
+  background-color: rgb(36, 124, 36);
   color: white;
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
 }
 
-.login__emailPass > button {
+.login__emailPass > button,
+.registerButton {
   padding: 9px;
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color: blue;
+  background-color: rgb(36, 124, 36);
   color: white;
   font-weight: bold;
   font-size: 15px;
@@ -236,8 +237,8 @@
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #013220,
-      0 0 40px #013220, 0 0 10px #013220, 0 0 20px #013220, 0 0 10px #013220;
+    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #013220, 0 0 40px #013220,
+      0 0 10px #013220, 0 0 20px #013220, 0 0 10px #013220;
   }
 
   to {

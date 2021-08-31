@@ -60,7 +60,7 @@ function Login() {
         <div className="login__auth">
           <div className="login__emailPass">
             <div className="login__label">
-              <h4>Login</h4>
+              <h4 style={{ fontSize: "25px", fontWeight: "600" }}>Login</h4>
             </div>
             <div className="login__inputFields">
               <div className="login__inputField">
@@ -75,10 +75,11 @@ function Login() {
                 <input
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  type="text"
-                  placeholder="Email"
+                  type="email"
+                  placeholder="email"
                 />
               </div>
+
               <div className="login__inputField">
                 <input
                   value={password}
@@ -89,10 +90,22 @@ function Login() {
               </div>
             </div>
             <div className="login__forgButt">
-              <small>Forgot Password?</small>
-              <button onClick={handleSignIn}>Login</button>
+              <button onClick={handleSignIn} style={{ margin: "auto" }}>
+                Login
+              </button>
             </div>
-            <button onClick={registerSignIn}>Register</button>
+
+            <div className="registerLink">
+              <small
+                style={{ fontSize: "15px", color: "grey", marginRight: "5px" }}
+              >
+                Don't have an account?
+              </small>
+
+              <button className="registerButton" onClick={registerSignIn}>
+                Register
+              </button>
+            </div>
           </div>
         </div>
         <div className="login__lang">
@@ -103,7 +116,7 @@ function Login() {
           <p>About</p>
           <p>Languages</p>
           <p>Careers</p>
-          <p>Businesses</p>
+          <p>Admissions</p>
           <p>Privacy</p>
           <p>Terms</p>
           <p>Contact</p>

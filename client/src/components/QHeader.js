@@ -72,10 +72,7 @@ function QHeader() {
           <NotificationsOutlinedIcon />
         </div>
       </div>
-      <div className="qHeader__input">
-        <SearchIcon />
-        <input type="text" placeholder="Search Quora" />
-      </div>
+
       <div className="qHeader__Rem">
         <div className="qHeader__avatar">
           <Avatar
@@ -85,7 +82,9 @@ function QHeader() {
           />
         </div>
         <LanguageIcon />
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        <Button id="btnAsk" onClick={() => setIsModalOpen(true)}>
+          Add Question
+        </Button>
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}

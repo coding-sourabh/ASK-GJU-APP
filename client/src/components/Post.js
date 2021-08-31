@@ -71,7 +71,7 @@ function Post({
 
   return (
     <div className="post" onClick={handleOnPostClick}>
-      <div className="post__info">
+      <div className="post__info" style = {{}}>
         <img
           className="avv"
           src={currentUser.photo ? currentUser.photo : avatar}

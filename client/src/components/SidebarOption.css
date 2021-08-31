@@ -47,7 +47,7 @@
 
 .sidebarOption:hover {
   transform: scale(1.1);
-  background-color: blue;
+  background-color: rgb(36, 124, 36);
   color: white;
   font-weight: 100;
 }

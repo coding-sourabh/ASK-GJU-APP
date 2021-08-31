@@ -7,9 +7,10 @@ const answerRoute = require("./routes/answer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const DB =
-  "mongodb+srv://skey:MyuyfnHiMIKYr1wH@cluster0.w89f4.mongodb.net/askGju?retryWrites=true&w=majority";
 dotenv.config();
+
+const DB = process.env.MONGODB;
+
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -37,5 +38,3 @@ mongoose
     });
   })
   .catch((err) => console.log(err));
-
-//mongodb+srv://skey:Sourabh@123@cluster0.w89f4.mongodb.net/askGju?retryWrites=true&w=majority
