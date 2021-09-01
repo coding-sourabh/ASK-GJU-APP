@@ -33,7 +33,7 @@ function Post({
   useEffect(() => {
     if (questionID) {
       axios
-        .post("http://localhost:8800/api/answer/fetchAnswer/", {
+        .post("https://ask-gju-server.herokuapp.com/api/answer/fetchAnswer/", {
           questionID: questionID,
         })
         .then(function (response) {
@@ -49,7 +49,7 @@ function Post({
     e.preventDefault();
     // Save answer
     axios
-      .post("http://localhost:8800/api/answer/addAnswer/", {
+      .post("https://ask-gju-server.herokuapp.com/api/answer/addAnswer/", {
         user: currentUser,
         questionID: questionID,
         answer: answer,
@@ -71,7 +71,7 @@ function Post({
 
   return (
     <div className="post" onClick={handleOnPostClick}>
-      <div className="post__info" style = {{}}>
+      <div className="post__info" style={{}}>
         <img
           className="avv"
           src={currentUser.photo ? currentUser.photo : avatar}

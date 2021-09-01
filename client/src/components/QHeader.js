@@ -32,7 +32,7 @@ function QHeader() {
 
     if (questionName) {
       axios
-        .post("http://localhost:8800/api/question/addQuestion", {
+        .post("https://ask-gju-server.herokuapp.com/api/question/addQuestion", {
           user: user,
           question: input,
           questionID: 2000,
@@ -107,14 +107,7 @@ function QHeader() {
             <h5>Share Link</h5>
           </div>
           <div className="modal__info">
-            <Avatar
-              className="avatar"
-              src={
-                user.photo
-                  ? user.photo
-                  : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
-              }
-            />
+            <Avatar className="avatar" src={avatar} />
             <p>{user.username} asked</p>
             <div className="modal__scope">
               <PeopleAltOutlinedIcon />

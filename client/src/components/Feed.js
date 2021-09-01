@@ -10,7 +10,7 @@ function Feed() {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8800/api/question/fetchQuestions")
+      .post("https://ask-gju-server.herokuapp.com/api/question/fetchQuestions")
       .then(function (response) {
         let data = response.data.allQuestions;
         setPosts(data);

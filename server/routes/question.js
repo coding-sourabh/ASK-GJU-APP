@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const QuestionModel = require("../models/Question");
-// import { v4 as uuidv4 } from "uuid";
 
 // save question to corresponding user
 router.post("/addQuestion", async (req, res) => {
@@ -54,9 +53,9 @@ router.post("/addQuestion", async (req, res) => {
 router.post("/fetchQuestions", async (req, res) => {
   try {
     // Fetch Questions
-    const ques = await QuestionModel.find();
+    const ques = await QuestionModel.find({});
     ques.sort((a, b) => b.createdAt - a.createdAt);
-
+  
     res.status(200).json({
       allQuestions: ques,
     });

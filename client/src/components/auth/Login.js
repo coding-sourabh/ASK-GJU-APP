@@ -15,7 +15,7 @@ function Login() {
   const handleSignIn = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8800/api/user/login", {
+      .post("https://ask-gju-server.herokuapp.com/api/user/login", {
         username: username,
         password: password,
       })
@@ -32,7 +32,7 @@ function Login() {
   const registerSignIn = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8800/api/user/register", {
+      .post("https://ask-gju-server.herokuapp.com/api/user/register", {
         username: username,
         email: email,
         password: password,
