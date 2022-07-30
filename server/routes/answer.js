@@ -49,7 +49,7 @@ router.post("/addAnswer", async (req, res) => {
 // Fetch all answers return as response
 
 router.post("/fetchAnswer", async (req, res) => {
-  // console.log(req.body);
+  
   try {
     // Fetch Answers
     const ans = await AnswerModel.find({ questionID: req.body.questionID });

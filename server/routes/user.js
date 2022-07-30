@@ -59,8 +59,11 @@ router.post("/login", async (req, res) => {
   try {
     //find user
     const user = await User.findOne({ username: req.body.username });
+    
+    if(!user) {
+      res.status(200).json({mssg:"USER NOT FOUND"});
+    }
 
-    !user && res.status(400).json("Wrong username or password");
     console.log(user);
     //decrypt password
     const decryptedPassword = await bcrypt.compare(
@@ -68,7 +71,7 @@ router.post("/login", async (req, res) => {
       user.password
     );
 
-    !decryptedPassword && res.status(400).json("wrong username and password");
+    !decryptedPassword && res.status(200).json({mssg:"WRONG DETAILS"});
 
     // token generation
     const token = generateToken(user);

@@ -4,7 +4,7 @@ const QuestionModel = require("../models/Question");
 // save question to corresponding user
 router.post("/addQuestion", async (req, res) => {
   //   console.log(req.body);
-
+  
   // Generate data and time
   let currentdate = new Date();
   let datetime =
@@ -35,6 +35,8 @@ router.post("/addQuestion", async (req, res) => {
       imageUrl: req.body.imageUrl,
       questionTime: datetime,
       active: req.body.active,
+      upvotes: 0,
+      downvotes: 0
     });
 
     // save this new Question and send response
@@ -63,5 +65,18 @@ router.post("/fetchQuestions", async (req, res) => {
     res.status;
   }
 });
+
+
+router.post("/updateVotes", async (req, res) => {
+  // console.log("reached update", req.body);
+
+  try {
+    await QuestionModel.updateOne({questionID: req.body.questionID}, {upvotes: req.body.upvotes, downvotes: req.body.downvotes})
+  } catch(e) {
+    console.log(e);
+  }
+
+  res.send("success in updation")
+})
 
 module.exports = router;
